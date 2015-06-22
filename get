@@ -1,0 +1,13 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: get
+# key: get
+# binding: direct-keybinding
+# --
+url = URI("https://hris.revenuemed.com/HomePage.asp")
+
+req = Net::HTTP::Get.new(url)
+res = Net::HTTP.start(url.host, url.port, :use_ssl => true) {|http|
+   http.request(req)
+}
+
+res.header['set-cookie'].split(';')[0]
