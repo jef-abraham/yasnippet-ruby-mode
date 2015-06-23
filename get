@@ -3,6 +3,9 @@
 # key: get
 # binding: direct-keybinding
 # --
+require 'uri'
+require "net/http"
+
 url = URI("https://hris.revenuemed.com/HomePage.asp")
 
 req = Net::HTTP::Get.new(url)
