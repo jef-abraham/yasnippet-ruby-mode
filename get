@@ -14,3 +14,7 @@ res = Net::HTTP.start(url.host, url.port, :use_ssl => true) {|http|
 }
 
 res.header['set-cookie'].split(';')[0]
+
+if res.code == "200"
+
+end
