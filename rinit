@@ -1,0 +1,11 @@
+#name : rspec describe
+#group : rspec
+# --
+require 'spec_helper'
+require_relative '../'
+
+describe "$1" do
+  it "should $2" do
+    $3
+  end
+end
