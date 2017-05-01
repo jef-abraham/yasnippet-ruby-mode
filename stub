@@ -1,7 +1,7 @@
 #name : rspec stub
 #group : rspec
 # --
-stub_request(:get,'http://karnatakajudiciary.kar.nic.in/CaseSatus_AdvocateName.aspx').
-	        with(:body => {"MSISDN"=>"+919611131200", "Redirect_URL"=>"http://localhost/callback"},
+stub_request(:get,'http://').
+	        with(:body => {"MSISDN"=>"", "Redirect_URL"=>"http://localhost/callback"},
         	     :headers => {'Accept'=>['*/*', 'application/xml'], 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'Authorization'=>'Basic YmJhMDQxNWYtOTJmZS00OGYzLTlmOWItOTEyZmJkYjY4ZTdiOjcxNTZkMzJmLTFhOGQtNGQ3OC1hNDc0LWVlNDE1NjliZjQ4MQ==', 'Content-Type'=>'application/x-www-form-urlencoded', 'User-Agent'=>'Ruby'}).
         to_return(:status => 200, :body => @discover_res.to_json, :headers => {})
