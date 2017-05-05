@@ -1,0 +1,4 @@
+#name : try
+#group :
+# --
+try(:[],$0)
