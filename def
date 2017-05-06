@@ -3,5 +3,14 @@
 # key: def
 # --
 def ${1:method}${2:(${3:args})}
+  begin
     $0
+    render :json => Case.autosuggest(params['advocate_name'])
+  rescue CustomError => e
+    CBLogger.log_cus_err("Custom error in case show page caseId = #{params['id']}",{'e' => e,'params' => params})
+    render :json => {'e' => "Custom Error = #{e}"}, :status => 500
+  rescue Exception => e
+    CBLogger.log_err("Error in showing case caseId = #{params['id']}",{'e' => e,'params' => params})
+    render :plain => e, :status => 500
+  end
 end
